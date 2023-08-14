@@ -35,14 +35,14 @@ while to_be_searched_number < 90000005:
     #interactions of bot on the second page
     try:
         wait.until(EC.presence_of_element_located((By.CLASS_NAME, "q-table")))
-
+        ''' this is the piece of code that handles the logic for the second dropdown where we wish to select "All" 
         dropdown_pg = driver.find_elements(By.CLASS_NAME,'q-icon.notranslate.material-icons.q-select__dropdown-icon')
         wait.until(EC.element_to_be_clickable(dropdown_pg[-1])).click()
         #options =driver.find_elements(By.CLASS_NAME, 'q-item__label')
 
         options = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='q-item__label' and contains(span/text(), 'All')]")))
         wait.until(EC.element_to_be_clickable(options)).click()
-
+        '''
         table_element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "q-table")))
         table_rows = table_element.find_elements(By.TAG_NAME, "tr")
         new_list = []
